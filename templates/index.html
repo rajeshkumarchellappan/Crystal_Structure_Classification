@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classification of Crystal Structure based on Chemical Properties </title>
+    <link rel="icon" href="data:,">
+
+</head>
+
+
+
+
+<style>
+body {
+  background-image: url("https://images.pexels.com/photos/3725723/pexels-photo-3725723.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-position: 0.1%;
+
+}
+</style>
+
+<body>
+     </div>
+           <form action= "{{ url_for('predict')}}" method="POST">
+
+
+                 <h1 style="font-size:60px;  color:blueviolet;"> Classification of Crystal Structure</h1>
+                 <h3 style="font-size:30px; color:black;">What is the Mohs Hardness of the mineral?</h3><br><input name="Mohs_Hardness" required="required"><br>
+                 <h3 style="font-size:30px; color:black;">What is the Diaphaneity of the mineral?(1 for Opaque or 2 for Translucent or 3 for Transparent)</h3><br><input name="Diaphaneity" required="required"><br>
+                 <h3 style="font-size:30px; color:black;">What is the Specific Gravity of the mineral?</h3><br><input name="Specific_Gravity" required="required"><br>
+                 <h3 style="font-size:30px; color:black;">Optical properties of the mineral (1 for Anisotropic or 2 for Isotropic or 3 for Uniaxial or 4 for Biaxial )?</h3><br><input name="Optical" required="required"><br>
+                 <h3 style="font-size:30px; color:black;">What is the Refractive Index of the mineral?</h3><br><input name="Refractive_Index" required="required"><br>
+
+                 <h3 style="font-size:30px; color:black;">What is the Molar Mass of the mineral?</h3><br><input name="Molar_Mass" required="required"><br>
+                 <h3 style="font-size:30px; color:black;">What is the Molar Volume of the mineral?</h3><br><input name="Molar_Volume" required="required"><br>
+                 </select>
+                <br><br><button style="font-size:40px; color:darkred;" type="submit" class="btn btn-primary btn-block btn-large"> Classifier</button>
+                 <br>
+
+
+           </form>
+
+
+
+         <br><br><h3 style="font-size:30px;">{{ prediction_text }}<h3>
+     </div>
+
+
+
+     <style>
+        body {
+            background-color: burlywood;
+            text-align: center;
+            padding: 0px;
+        }
+
+
+    </style>
+
+
+</body>
+</html>
