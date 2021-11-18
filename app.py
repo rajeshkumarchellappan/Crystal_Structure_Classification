@@ -34,9 +34,23 @@ def predict():
 
         #prediction = model.predict([['Mohs_Hardness', 'Diaphaneity', 'Specific_Gravity', 'Optical','Refractive_Index', 'Dispersion', 'Molar_Mass', 'Molar_Volume','Calculated_Density']])
         prediction = model.predict([[Mohs_Hardness, Diaphaneity, Specific_Gravity, Optical, Refractive_Index,Dispersion, Molar_Mass, Molar_Volume,Calculated_Density]])
-        output = round(prediction[0], 2)
+        predict_output = round(prediction[0], 2)
+        if predict_output == 1:
+            output='Triclinic'
+        elif predict_output == 2:
+            output='Monoclinic'
+        elif predict_output == 3:
+            output='Orthorhombic'
+        elif predict_output == 4:
+            output='Tetragonal'
+        elif predict_output == 5:
+            output='Hexagonal'
+        elif predict_output == 6:
+            output='Trigonal'
+        elif predict_output == 7:
+            output='Cubic'
 
-        return render_template('index.html', prediction_text = 'The classified crystal structure {}'.format(output))
+        return render_template('index.html', prediction_text = 'The crystal structure is {}'.format(output))
     else:
 
         return render_template('index.html')
